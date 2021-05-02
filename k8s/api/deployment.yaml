@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: api
 spec:
-  replicas: 10
+  replicas: 1
   selector:
     matchLabels:
       app: api
@@ -15,6 +15,10 @@ spec:
       containers:
         - name: api
           image: dombootcamp/api-bootcamp-produto:latest
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
           ports:
             - containerPort: 8080
           env:
