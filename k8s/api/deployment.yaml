@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: dombootcamp/api-bootcamp-produto:latest
+          image: dombootcamp/api-bootcamp-produto
           ports:
             - containerPort: 8080
           env:
